@@ -1,0 +1,31 @@
+{% extends "admin/challenges/create.html" %}
+
+{% block header %}
+<div class="alert alert-secondary" role="alert">
+	Multi Answer Challenge counts the submitted answers and awards points equal to the amount of correct answered flags. 
+</div>
+{% endblock %}
+
+{% block value %}
+<div class="form-group">
+	<label for="value">Individual Flag Points<br>
+		<small class="form-text text-muted">
+			This is how many points an individual flag is worth.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="flagpoints" placeholder="Enter value" required>
+</div>
+<div class="form-group">
+	<label for="value">Flag Count<br>
+		<small class="form-text text-muted">
+			This is the amount of flags the challenge has.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="flagcount" placeholder="Enter value" required>
+</div>
+{% endblock %}
+
+{% block type %}
+<input type="hidden" value="0" name="value" id="value">
+<input type="hidden" value="multianswer" name="type" id="chaltype">
+{% endblock %}
